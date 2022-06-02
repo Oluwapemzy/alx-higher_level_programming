@@ -11,4 +11,4 @@ def fizzbuzz():
             print("FizzBuzz", end=' ')
 
         else:
-            print(number, end=' ')
+            print(f"{number}", end=' ')
