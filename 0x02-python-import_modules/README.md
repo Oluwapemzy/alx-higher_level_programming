@@ -1,0 +1,1 @@
+**Thia file is mandatory in all projects as it give intro into the project**
