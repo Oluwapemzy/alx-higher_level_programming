@@ -8,12 +8,12 @@ int is_palindrome(listint_t **head)
 {
 unsigned int len = 1;
 listint_t *temp;
-if(head == NULL || *head == NULL)
+if (head == NULL || *head == NULL)
 {
 return (1);
 }
 temp = *head;
- while (temp)
+while (temp)
 {
 temp = temp->next;
 len++;
