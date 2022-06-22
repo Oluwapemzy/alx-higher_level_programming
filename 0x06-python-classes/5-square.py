@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""module of class containing getter and setter print square"""
+
+
 class Square():
     """
         @size - size of square
