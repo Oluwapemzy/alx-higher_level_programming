@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""moduke contains class which has getter and setter"""
+
+
 class Square():
     """
         @size - size of square
