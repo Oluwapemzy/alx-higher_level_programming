@@ -4,9 +4,10 @@
 
 class Square():
     """
-        @size - size of square
+        size - size of square
     """
     def __init__(self,size=0):
+        """init square"""
         self.size=size
     @property
     def size(self):
