@@ -4,9 +4,10 @@
 
 class Square():
     """
-        @size - size of square
+        size - size of square
     """
     def __init__(self,size=0, position=(0, 0)):
+        """init square"""
         self.size=size
         self.position = position
     @property
@@ -28,7 +29,7 @@ class Square():
             self.__size = value
         else:
             raise TypeError("size must be an integer")
-        if value <0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         
     def area(self):
@@ -37,7 +38,7 @@ class Square():
             Returns:
                 area.
         """
-        return(self.size **2)
+        return(self.__size **2)
     def my_print(self):
         """
             prints the square with #
