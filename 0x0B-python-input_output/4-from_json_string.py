@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module of function return an object in JSOn"""
+import json
 
 
 def from_json_string(my_str):
