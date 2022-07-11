@@ -2,8 +2,11 @@
 import json
 """module contains class Base"""
 
+
 class Base:
+    """Class Base"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Initialize Base instances
         Args:
@@ -12,7 +15,7 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            Base.__nb_objects+=1
+            Base.__nb_objects += 1
             self.id = self.__nb_objects
 
     @staticmethod
@@ -27,12 +30,12 @@ class Base:
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
         if list_objs is None:
-            stringify = "[]"
+            ify = "[]"
         else:
-            stringify = cls.to_json_string([j.to_dictionary() for j in list_objs])
+            ify = cls.to_json_string([j.to_dictionary() for j in list_objs])
         filename = cls.__name__ + ".json"
         with open(filename, 'w') as f:
-            f.write(stringify)
+            f.write(ify)
 
     @staticmethod
     def from_json_string(json_string):
@@ -59,7 +62,7 @@ class Base:
         my_result = []
         with open(filename, mode='r') as classFile:
             data = classFile.read()
-        #convert str to list
+
         data = cls.from_json_string(data)
         for item in data:
             if type(item) == dict:

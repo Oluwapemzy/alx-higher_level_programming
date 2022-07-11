@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""module of class rectangle"""
+"""Rectangle class Module"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class Rectangle""" 
-    def __init__(self, width, height, x=0, y=0, id=None): 
+    """Class Rectangle"""
+
+    def __init__(self, width, height, x=0, y=0, id=None):
         """Init function"""
         super().__init__(id)
         self.width = width
@@ -27,7 +28,7 @@ class Rectangle(Base):
     def x(self):
         """x func"""
         return self.__x
-    
+
     @property
     def y(self):
         """get_y funct"""
@@ -41,7 +42,6 @@ class Rectangle(Base):
         if width <= 0:
             raise ValueError("width must be > 0")
         self.__width = width
-
 
     @height.setter
     def height(self, height):
@@ -61,7 +61,6 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = x
 
-
     @y.setter
     def y(self, y):
         """set_y function"""
@@ -78,7 +77,7 @@ class Rectangle(Base):
     def display(self):
         """Display rectangle"""
 
-        if self.__y !=0:
+        if self.__y != 0:
             for newline in range(self.y):
                 print()
         for num in range(self.height):
@@ -86,7 +85,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__ method"""
-        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        r = f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} \
+        - {self.width}/{self.height}"
+        return r
 
     def update(self, *args, **kwargs):
         """update using *args"""
@@ -101,9 +102,10 @@ class Rectangle(Base):
                 pass
         else:
             for key, value in kwargs.items():
-                setattr(self,key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """returns the dictionary representation of a rectangle"""
-        dict_rep = {'x': self.x, 'width': self.__width, 'id':self.id, 'height': self.__height, 'y':self.y}
+        dict_rep = {'x': self.x, 'width': self.__width,
+                    'id': self.id, 'height': self.__height, 'y': self.y}
         return dict_rep

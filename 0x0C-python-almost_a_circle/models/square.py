@@ -2,15 +2,21 @@
 """Square module"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """a  class Square which inherits from Rectangle class"""
+
     def __init__(self, size, x=0, y=0, id=None):
         """initializes the Square classs"""
         self.size = size
-        super().__init__(width=size, height=size, x=x, y=y,id=id)
+        super().__init__(width=size, height=size, x=x, y=y, id=id)
 
     def __str__(self):
-        return (f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.size}")
+        my_str = (
+            f"[{self.__class__.__name__}] ({self.id}) \
+                {self.x}/{self.y} - {self.size}")
+        return my_str
+
     @property
     def size(self):
         """Retrieves the size attribute"""
@@ -25,7 +31,7 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """update the Square class using *args and **kwargs
             Args:
@@ -38,9 +44,9 @@ class Square(Rectangle):
                 self.y = args[3]
             except IndexError:
                 pass
-        elif  len(kwargs) !=0:
+        elif len(kwargs) != 0:
             for key, value in kwargs.items():
-                setattr(self,key, value)
+                setattr(self, key, value)
         else:
             print()
 
